@@ -1,0 +1,90 @@
+#rotowany {
+    background: url('http://psy-pies.com/pliki/image/foto/duze/foto54904956d378e.jpg') no-repeat;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+    transition: all 0.5s;
+}
+
+#rotowany:hover {
+    transform: rotate(720deg);
+}
+
+#odsuwany {
+    background-color: red;
+    height: 400px;
+    width: 400px;
+    transition: all 0.5s;
+    display: inline-block;
+}
+
+#odsuwany:hover {
+    transform: translateX(100px);
+    /*    wyzszy zostanie nadpisany*/
+    transform: translateY(100px);
+    /*    musimy wziac złapac je razem*/
+    transform: translate(100px, 100px);
+}
+
+#odsuwany_2 {
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    background-color: yellow;
+    /*    jak chcemy zeby sie odsuwany wsuwał pod odsuwany 2 to odsuwany 2 musi miec jakas pozycje np relative*/
+    z-index: 1;
+    position: relative;
+}
+
+
+/*jezli skalujemy obiekt to zeby tylko sie powiekszył, ale zeby sie nie rozepchał do trzeba go ograniczyc overflow hidden*/
+
+#skalowany_outer {
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+}
+
+#skalowany {
+    background: url('http://psy-pies.com/pliki/image/foto/duze/foto54904956d378e.jpg') no-repeat;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+    transition: all 0.5s;
+}
+
+#skalowany:hover {
+    transform: scale(1.5);
+}
+
+
+/*ANIMCAJE*/
+
+#animowany {
+    width: 400px;
+    height: 400px;
+    background-color: limegreen;
+/*
+    background: url('http://psy-pies.com/pliki/image/foto/duze/foto54904956d378e.jpg') no-repeat;
+    background-size: cover;
+*/
+    /*    przypisanie animacji do obiektu*/
+    animation-name: changeWidth;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+
+/*definicja animaji*/
+
+@keyframes changeWidth {
+    0% 100% {
+        width: 400px;
+    }
+    50% {
+        width: 1000px;
+        background-color: aqua;
+        opacity: 0.0;
+    }
+}
